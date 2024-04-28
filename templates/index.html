@@ -1,0 +1,490 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+    <!-- ======= Hero Section ======= -->
+    <section id="hero" class="hero">
+        <div class="container position-relative">
+            <div class="row gy-5" data-aos="fade-in">
+                <div class="col-lg-6 order-2 order-lg-1 d-flex flex-column justify-content-center text-center text-lg-start">
+                    <h2>Welcome to <span>{{ about.name }}</span></h2>
+                    <p>{{ about.description }}</p>
+                    <div class="d-flex justify-content-center justify-content-lg-start">
+                        <a href="#about" class="btn-get-started">Get Started</a>
+                        <a href="{{ about.youtube }}"
+                           class="glightbox btn-watch-video d-flex align-items-center"><i class="bi bi-play-circle"></i><span>Watch Video</span></a>
+                    </div>
+                </div>
+                <div class="col-lg-6 order-1 order-lg-2">
+                    <img src="{% static 'img/hero-img.svg' %}" class="img-fluid" alt="" data-aos="zoom-out"
+                         data-aos-delay="100">
+                </div>
+            </div>
+        </div>
+
+        <div class="icon-boxes position-relative">
+            <div class="container position-relative">
+                <div class="row gy-4 mt-5">
+
+                    <div class="col-xl-3 col-md-6" data-aos="fade-up" data-aos-delay="100">
+                        <div class="icon-box">
+                            <div class="icon"><i class="bi bi-easel"></i></div>
+                            <h4 class="title"><a href="" class="stretched-link">Startup</a></h4>
+                        </div>
+                    </div><!--End Icon Box -->
+
+                    <div class="col-xl-3 col-md-6" data-aos="fade-up" data-aos-delay="200">
+                        <div class="icon-box">
+                            <div class="icon"><i class="bi bi-gem"></i></div>
+                            <h4 class="title"><a href="" class="stretched-link">Innovation</a></h4>
+                        </div>
+                    </div><!--End Icon Box -->
+
+                    <div class="col-xl-3 col-md-6" data-aos="fade-up" data-aos-delay="300">
+                        <div class="icon-box">
+                            <div class="icon"><i class="bi bi-geo-alt"></i></div>
+                            <h4 class="title"><a href="" class="stretched-link">Web3 World</a></h4>
+                        </div>
+                    </div><!--End Icon Box -->
+
+                    <div class="col-xl-3 col-md-6" data-aos="fade-up" data-aos-delay="500">
+                        <div class="icon-box">
+                            <div class="icon"><i class="bi bi-command"></i></div>
+                            <h4 class="title"><a href="" class="stretched-link">Artificial Intelligence</a></h4>
+                        </div>
+                    </div><!--End Icon Box -->
+
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End Hero Section -->
+
+    <main id="main">
+
+        <!-- ======= About Us Section ======= -->
+        <section id="about" class="about">
+            <div class="container" data-aos="fade-up">
+
+                <div class="section-header">
+                    <h2>About Us</h2>
+                    <p>{{ about.description }}</p>
+                </div>
+
+                <div class="row gy-4">
+                    <div class="col-lg-6">
+                        <h3>Who we are</h3>
+                        <img src="{% static 'img/about.jpg' %}" class="img-fluid rounded-4 mb-4" alt="">
+                        <p>Welcome to AralTech, the cradle of innovation nestled in the heart of PDP University. Born
+                            from a shared vision of a group of audacious young minds, we are not just a team but a
+                            dynamic force poised to redefine the entrepreneurial landscape.</p>
+                        <p><strong>Our Genesis:</strong> We are a mosaic of talent and passion, each member handpicked
+                            for their unique
+                            skills and unyielding dedication. Founded under the spirit of exploration and the pursuit of
+                            excellence, AralTech is more than a group—it’s a movement.</p>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="content ps-0 ps-lg-5">
+                            <p class="fst-italic">
+                                Why us? Because we are the future. We are the architects of tomorrow, the pioneers of
+                            </p>
+                            <ul>
+                                <li><i class="bi bi-check-circle-fill"></i>
+                                    In the pursuit of innovation, we are not afraid to challenge the status quo
+                                </li>
+                                <li><i class="bi bi-check-circle-fill"></i>
+                                    We are not just a team but a dynamic force poised to redefine the entrepreneurial
+                                    landscape
+                                </li>
+                                <li><i class="bi bi-check-circle-fill"></i>
+                                    We are a mosaic of talent and passion, each member handpicked for their unique
+                                    skills and unyielding dedication
+                                </li>
+                            </ul>
+                            <p>
+                                <strong>Our Mission:</strong> At AralTech, we dream big. Our primary ambition is to be
+                                the architects of
+                                the future, constructing startups that not only challenge the status quo but also shape
+                                the very fabric of industry. Our ultimate quest is to transform these ventures into a
+                                standalone powerhouse—a beacon of innovation and a testament to the potential of
+                                youthful creativity.
+                            </p>
+
+                            <div class="position-relative mt-4">
+                                <img src="{% static 'img/about-2.jpg' %}" class="img-fluid rounded-4" alt="">
+                                <a href="{{ about.youtube }}" class="glightbox play-btn"></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section><!-- End About Us Section -->
+
+        <!-- ======= Partners Section ======= -->
+        <section id="partners" class="clients">
+            <div class="container" data-aos="zoom-out">
+                <div class="section-header">
+                    <h2>Our Partners</h2>
+                    <p style="padding-bottom: 30px;">With us and those who support us</p>
+                    <div class="clients-slider swiper">
+                        <div class="swiper-wrapper align-items-center">
+
+                            {% for partner in partners %}
+                                <div class="swiper-slide">
+                                    <a href="{{ partner.url }}" target="_blank">
+                                        <img src="{{ partner.logo.url }}" class="img-fluid" alt="">
+                                        <p style="padding-top: 15px; text-align: center; font-size: 15px;">
+                                            <strong>{{ partner.name }}</strong></p>
+                                    </a>
+                                </div>
+                            {% endfor %}
+
+                        </div>
+                    </div>
+                </div>
+        </section><!-- End Partners Section -->
+
+        <!-- ======= Call To Action Section ======= -->
+        <section id="call-to-action" class="call-to-action">
+            <div class="container text-center" data-aos="zoom-out">
+                <a href="https://www.youtube.com/watch?v=LXb3EKWsInQ" class="glightbox play-btn"></a>
+                <h3>Call To Action</h3>
+                <p>
+                    You can watch our video to learn more about us
+                </p>
+                <a class="cta-btn" href="#">Call To Action</a>
+            </div>
+        </section><!-- End Call To Action Section -->
+
+        <!-- ======= Our Services Section ======= -->
+        <section id="services" class="services sections-bg">
+            <div class="container" data-aos="fade-up">
+                <div class="section-header">
+                    <h2>Our Services</h2>
+                    <p>Explore our wide range of services.</p>
+                </div>
+                <div class="row gy-4" data-aos="fade-up" data-aos-delay="100">
+                    {% for service in services %}
+                        <div class="col-lg-4 col-md-6">
+                            <div class="service-item position-relative d-flex flex-column">
+                                <div class="icon">
+                                    <img src="{{ service.icon.url }}" class="img-fluid" alt="">
+                                </div>
+                                <h3>{{ service.title }}</h3>
+                                <p class="flex-grow-1">{{ service.description }}</p>
+                                <a href="#" class="readmore mt-auto stretched-link">Read more <i
+                                        class="bi bi-arrow-right"></i></a>
+                            </div>
+                        </div><!-- End Service Item -->
+                    {% endfor %}
+                </div>
+            </div>
+        </section><!-- End Our Services Section -->
+
+
+        <!-- ======= Testimonials Section ======= -->
+        <section id="testimonials" class="testimonials">
+            <div class="container" data-aos="fade-up">
+
+                <div class="section-header">
+                    <h2>Testimonials</h2>
+                    <p>What people think about us</p>
+                </div>
+
+                <div class="slides-3 swiper" data-aos="fade-up" data-aos-delay="100">
+                    <div class="swiper-wrapper">
+
+                        {% for testimonial in testimonials %}
+                            <div class="swiper-slide">
+                                <div class="testimonial-wrap">
+                                    <div class="testimonial-item">
+                                        <div class="d-flex align-items-center">
+                                            <img src="{{ testimonial.image.url }}"
+                                                 class="testimonial-img flex-shrink-0" alt="">
+                                            <div>
+                                                <h3>{{ testimonial.name }}</h3>
+                                                <h4>{{ testimonial.position }}</h4>
+                                                <div class="stars">
+                                                    <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                                                        class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                                                        class="bi bi-star-fill"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <p>
+                                            <i class="bi bi-quote quote-icon-left"></i>
+                                            {{ testimonial.description }}
+                                            <i class="bi bi-quote quote-icon-right"></i>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div><!-- End testimonial item -->
+                        {% endfor %}
+
+                    </div>
+                    <div class="swiper-pagination"></div>
+                </div>
+
+            </div>
+        </section><!-- End Testimonials Section -->
+
+        <!-- ======= Portfolio Section ======= -->
+        <section id="portfolio" class="portfolio sections-bg">
+            <div class="container" data-aos="fade-up">
+
+                <div class="section-header">
+                    <h2>Portfolio</h2>
+                    <p>Our projects so far</p>
+                </div>
+
+                <div class="portfolio-isotope" data-portfolio-filter="*" data-portfolio-layout="masonry"
+                     data-portfolio-sort="original-order" data-aos="fade-up" data-aos-delay="100">
+
+                    <div>
+                        <ul class="portfolio-flters">
+                            {% for category in portfolio_categories %}
+                                <li data-filter=".filter-{{ category.name }}">{{ category.name }}</li>
+                            {% endfor %}
+                        </ul><!-- End Portfolio Filters -->
+                    </div>
+
+                    <div class="row gy-4 portfolio-container">
+                        {% for project in portfolios %}
+                            <div class="col-xl-4 col-md-6 portfolio-item filter-{{ project.category.name }}">
+                                <div class="portfolio-wrap">
+                                    <a href="{{ project.image.url }} "
+                                       data-gallery="portfolio-gallery-app"
+                                       class="glightbox"><img src="{% static 'img/portfolio/app-1.jpg' %}"
+                                                              class="img-fluid"
+                                                              alt=""></a>
+                                    <div class="portfolio-info">
+                                        <h4><a href="{% url 'project_details' project.id %}"
+                                               title="More Details">{{ project.title }}</a></h4>
+                                        <p>{{ project.category.name }}</p>
+                                    </div>
+                                </div>
+                            </div><!-- End Portfolio Item -->
+                        {% endfor %}
+
+                    </div><!-- End Portfolio Container -->
+
+                </div>
+
+            </div>
+        </section><!-- End Portfolio Section -->
+
+        <!-- ======= Our Team Section ======= -->
+        <section id="team" class="team">
+            <div class="container" data-aos="fade-up">
+
+                <div class="section-header">
+                    <h2>Our Team</h2>
+                    <p>Get to know our team</p>
+                </div>
+
+                <div class="row gy-4">
+                    {% for member in team %}
+                        <div class="col-xl-3 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="100">
+                            <div class="member">
+                                <img src="{{ member.image.url }}" class="img-fluid" alt="{{ member.name }}">
+                                <h4>{{ member.name }}</h4>
+                                <span>{{ member.position }}</span>
+                                <div class="social">
+                                    <a href="{{ member.facebook }}"><i class="bi bi-facebook"></i></a>
+                                    <a href="{{ member.twitter }}"><i class="bi bi-twitter"></i></a>
+                                    <a href="{{ member.instagram }}"><i class="bi bi-instagram"></i></a>
+                                    <a href="{{ member.linkedin }}"><i class="bi bi-linkedin"></i></a>
+                                </div>
+                            </div>
+                        </div><!-- End Team Member -->
+
+                    {% endfor %}
+
+                </div>
+
+            </div>
+        </section><!-- End Our Team Section -->
+
+        <!-- ======= Frequently Asked Questions Section ======= -->
+        <section id="faq" class="faq">
+            <div class="container" data-aos="fade-up">
+
+                <div class="row gy-4">
+
+                    <div class="col-lg-4">
+                        <div class="content px-xl-5">
+                            <h3>Frequently Asked <strong>Questions</strong></h3>
+                            <p>
+                                Get answers to your frequently asked questions about us
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-8">
+
+                        <div class="accordion accordion-flush" id="faqlist" data-aos="fade-up" data-aos-delay="100">
+
+                            {% for faq in faqs %}
+                                <div class="accordion-item">
+                                    <h3 class="accordion-header">
+                                        <button class="accordion-button collapsed" type="button"
+                                                data-bs-toggle="collapse"
+                                                data-bs-target="#faq-content-{{ faq.id }}">
+                                            <span class="num">{{ forloop.counter }}.</span>
+                                            {{ faq.question }}
+                                        </button>
+                                    </h3>
+                                    <div id="faq-content-{{ faq.id }}" class="accordion-collapse collapse"
+                                         data-bs-parent="#faqlist">
+                                        <div class="accordion-body">
+                                            {{ faq.answer }}
+                                        </div>
+                                    </div>
+                                </div><!-- # Faq item -->
+                            {% endfor %}
+
+
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </section><!-- End Frequently Asked Questions Section -->
+
+        <!-- ======= Recent Blog Posts Section ======= -->
+        <section id="recent-posts" class="recent-posts sections-bg">
+            <div class="container" data-aos="fade-up">
+
+                <div class="section-header">
+                    <h2>Recent Blog Posts</h2>
+                    <p>For those who are interested in our life</p>
+                </div>
+
+                <div class="row gy-4">
+
+                    {% for blog in blogs %}
+                        <div class="col-xl-4 col-md-6">
+                            <article>
+
+                                <div class="post-img">
+                                    <img src="{{ blog.image.url }}" class="img-fluid" alt="">
+                                </div>
+
+                                <p class="post-category">{{ blog.category }}</p>
+
+                                <h2 class="title">
+                                    <a href="{% url 'blog_detail' blog.id %}">{{ blog.title }}</a>
+                                </h2>
+
+                                <div class="d-flex align-items-center">
+                                    <img src="{% static 'img/blog/blog-author-3.jpg' %}" alt=""
+                                         class="img-fluid post-author-img flex-shrink-0">
+                                    <div class="post-meta">
+                                        <p class="post-author">{{ blog.author }}</p>
+                                        <p class="post-date">
+                                            <time datetime="{{ blog.created_at }}">{{ blog.created_at }}</time>
+                                        </p>
+                                    </div>
+                                </div>
+
+                            </article>
+                        </div><!-- End post list item -->
+                    {% endfor %}
+
+                </div><!-- End recent posts list -->
+
+            </div>
+        </section><!-- End Recent Blog Posts Section -->
+
+
+        <!-- ======= Contact Section ======= -->
+        <section id="contact" class="contact">
+            <div class="container" data-aos="fade-up">
+
+                <div class="section-header">
+                    <h2>Contact</h2>
+                    <p>Whether you have a question, a suggestion, or just want to say hi, we'd love to hear from you.
+                        Feel free to drop us a line anytime.</p>
+                </div>
+
+                <div class="row gx-lg-0 gy-4">
+
+                    <div class="col-lg-4">
+
+                        <div class="info-container d-flex flex-column align-items-center justify-content-center">
+                            <div class="info-item d-flex">
+                                <i class="bi bi-geo-alt flex-shrink-0"></i>
+                                <div>
+                                    <h4>Location:</h4>
+                                    <p>{{ about.address }}</p>
+                                </div>
+                            </div><!-- End Info Item -->
+
+                            <div class="info-item d-flex">
+                                <i class="bi bi-envelope flex-shrink-0"></i>
+                                <div>
+                                    <h4>Email:</h4>
+                                    <p>{{ about.email }}</p>
+                                </div>
+                            </div><!-- End Info Item -->
+
+                            <div class="info-item d-flex">
+                                <i class="bi bi-phone flex-shrink-0"></i>
+                                <div>
+                                    <h4>Call:</h4>
+                                    <p>{{ about.phone }}</p>
+                                </div>
+                            </div><!-- End Info Item -->
+
+                            <div class="info-item d-flex">
+                                <i class="bi bi-clock flex-shrink-0"></i>
+                                <div>
+                                    <h4>Open Hours:</h4>
+                                    <p>Mon-Sat: 8AM - 23PM</p>
+                                </div>
+                            </div><!-- End Info Item -->
+                        </div>
+
+                    </div>
+
+                    <div class="col-lg-8">
+                        <form action="{% static 'forms/contact.php' %}" method="post" role="form"
+                              class="php-email-form">
+                            <div class="row">
+                                <div class="col-md-6 form-group">
+                                    <input type="text" name="name" class="form-control" id="name"
+                                           placeholder="Your Name" required>
+                                </div>
+                                <div class="col-md-6 form-group mt-3 mt-md-0">
+                                    <input type="email" class="form-control" name="email" id="email"
+                                           placeholder="Your Email" required>
+                                </div>
+                            </div>
+                            <div class="form-group mt-3">
+                                <input type="text" class="form-control" name="subject" id="subject"
+                                       placeholder="Subject" required>
+                            </div>
+                            <div class="form-group mt-3">
+                                <textarea class="form-control" name="message" rows="7" placeholder="Message"
+                                          required></textarea>
+                            </div>
+                            <div class="my-3">
+                                <div class="loading">Loading</div>
+                                <div class="error-message"></div>
+                                <div class="sent-message">Your message has been sent. Thank you!</div>
+                            </div>
+                            <div class="text-center">
+                                <button type="submit">Send Message</button>
+                            </div>
+                        </form>
+                    </div><!-- End Contact Form -->
+
+                </div>
+
+            </div>
+        </section><!-- End Contact Section -->
+
+    </main><!-- End #main -->
+{% endblock %}
