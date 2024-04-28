@@ -135,7 +135,3 @@ JAZZMIN_SETTINGS = {
     "search_bar": True,
     "show_ui_builder": True,
 }
-
-AXES_FAILURE_LIMIT = 3  # Number of login attempts allowed before lockout
-AXES_LOCK_OUT_AT_FAILURE = True  # Whether to lock out after too many login attempts
-AXES_COOLOFF_TIME = 10  # Number of minutes to lock out the user
