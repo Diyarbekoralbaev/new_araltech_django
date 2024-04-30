@@ -5,7 +5,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d38c14c4-9838-4d9a-af46-dd17282ad678" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/new_araltech_django/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/new_araltech_django/settings.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/aral_app/forms.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/partners/isee.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/img/logo-no-background.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/img/team_pic.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/staticfiles/img/logo-no-background.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/add_success.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aral_app/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/aral_app/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aral_app/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/aral_app/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/css/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/main.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/index.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -15,9 +26,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="JavaScript File" />
         <option value="Python Script" />
         <option value="HTML File" />
-        <option value="JavaScript File" />
       </list>
     </option>
   </component>
@@ -57,6 +68,7 @@
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\github\new_araltech_django\static\img" />
+      <recent name="D:\github\new_araltech_django\staticfiles\img" />
       <recent name="D:\github\new_araltech_django" />
     </key>
   </component>
@@ -104,7 +116,9 @@
       <option name="presentableId" value="Default" />
       <updated>1714295914461</updated>
       <workItem from="1714295917599" duration="2316000" />
-      <workItem from="1714298348642" duration="14026000" />
+      <workItem from="1714298348642" duration="17172000" />
+      <workItem from="1714450334627" duration="814000" />
+      <workItem from="1714500624286" duration="9744000" />
     </task>
     <servers />
   </component>

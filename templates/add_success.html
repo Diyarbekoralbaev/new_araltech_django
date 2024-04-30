@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div style="margin-top: 20px; padding: 20px; border: 1px solid green; background-color: #ccffcc;">
+        <h2>Success!</h2>
+        <p>{{ message }}</p>
+        <a href="{% url 'home' %}" class="error__button btn btn-primary btn-lg">Go to Home</a>
+    </div>
+{% endblock %}

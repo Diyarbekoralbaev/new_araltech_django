@@ -1,6 +1,7 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from .models import AboutModel, OurPartnersModel, ServicesModel, TestimonialModel, PortfolioModel, \
     TeamMembersModel, FaqModel, BlogModel, ContactModel, AwardsModel, ProjectCategoryModel, BlogCategoryModel
+from .forms import ContactForm
 
 
 def home(request):
@@ -57,3 +58,15 @@ def project_details(request, id):
 
 def custom_404(request):
     return render(request, '404.html', status=404)
+
+
+def add_contact(request):
+    if request.method == 'POST':
+        form = ContactForm(request.POST)
+        if form.is_valid():
+            form.save()
+            # Redirect to the success page after form is successfully saved
+            return redirect('home')
+    else:
+        form = ContactForm()
+    return render(request, 'index.html', {'form': form})

@@ -737,6 +737,23 @@ section {
 /*--------------------------------------------------------------
 # Clients Section
 --------------------------------------------------------------*/
+
+/* Default styles that apply on all devices */
+.clients-slider .swiper-slide img {
+    width: auto; /* Adjust width as per requirement */
+    max-height: 150px; /* Maximum height for larger screens */
+}
+
+
+
+/* Media query for mobile devices */
+@media (max-width: 768px) {
+    .clients-slider .swiper-slide img {
+        max-height: 100px; /* Smaller maximum height for mobile screens */
+    }
+}
+
+
 .clients {
   padding: 40px 0;
 }
