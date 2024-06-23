@@ -2,8 +2,12 @@ from django.shortcuts import render, redirect
 from .models import AboutModel, OurPartnersModel, ServicesModel, TestimonialModel, PortfolioModel, \
     TeamMembersModel, FaqModel, BlogModel, ContactModel, AwardsModel, ProjectCategoryModel, BlogCategoryModel
 from .forms import ContactForm
+from django.core.cache import cache
+from django.views.decorators.cache import cache_page
+from django.conf import settings
 
 
+@cache_page(settings.CACHE_TTL)
 def home(request):
     about = AboutModel.objects.first()
     partners = OurPartnersModel.objects.all()
@@ -32,6 +36,7 @@ def home(request):
     return render(request, 'index.html', context)
 
 
+@cache_page(settings.CACHE_TTL)
 def blog_detail(request, id):
     blog = BlogModel.objects.get(id=id)
     recent_blogs = BlogModel.objects.exclude(id=id).order_by('-created_at')[:3]
@@ -44,6 +49,7 @@ def blog_detail(request, id):
     return render(request, 'blog-details.html', context)
 
 
+@cache_page(settings.CACHE_TTL)
 def project_details(request, id):
     project = PortfolioModel.objects.get(id=id)
     recent_projects = PortfolioModel.objects.exclude(id=id).order_by('-created_at')[:3]
@@ -56,10 +62,12 @@ def project_details(request, id):
     return render(request, 'portfolio-details.html', context)
 
 
+@cache_page(settings.CACHE_TTL)
 def custom_404(request):
     return render(request, '404.html', status=404)
 
 
+@cache_page(settings.CACHE_TTL)
 def add_contact(request):
     if request.method == 'POST':
         form = ContactForm(request.POST)
